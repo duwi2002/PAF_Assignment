@@ -1,0 +1,25 @@
+### Create a Booking
+POST http://localhost:8080/bookings
+Content-Type: application/json
+
+{
+  "date": "2026-05-20",
+  "startTime": "10:00:00",
+  "endTime": "12:00:00"
+}
+
+### Try Overlapping Booking (Should Fail)
+POST http://localhost:8080/bookings
+Content-Type: application/json
+
+{
+  "date": "2026-05-20",
+  "startTime": "11:00:00",
+  "endTime": "13:00:00"
+}
+
+### Get All Bookings
+GET http://localhost:8080/bookings
+
+### Approve Booking (Change ID as needed)
+PUT http://localhost:8080/bookings/1/approve
